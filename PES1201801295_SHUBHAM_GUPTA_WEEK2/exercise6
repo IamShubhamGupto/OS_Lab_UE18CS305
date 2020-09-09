@@ -1,0 +1,7 @@
+for file in `ls`
+do
+	if [ "$file" != "${file,,}" ] ; then
+		mv -f -T "$file" "${file,,}"
+	fi	
+done
+#Program to convert all files in uppercase to lowercase
