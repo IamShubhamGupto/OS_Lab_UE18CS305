@@ -1,0 +1,9 @@
+#All docs
+*.docx
+*.pdf
+*.odt
+
+# C Stuff
+*.gch
+*.o
+*.out
