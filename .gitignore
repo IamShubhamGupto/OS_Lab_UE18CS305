@@ -2,6 +2,10 @@
 *.docx
 *.pdf
 *.odt
+*
+
+#zips
+*.zip
 
 # C Stuff
 *.gch
