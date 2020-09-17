@@ -36,11 +36,13 @@ void childProcess(int arr[5]){
     for(int i = 1; i < 5; i++){
         arr[i] += arr[i-1];
     }
+    /*
     printf("Array after passing through childProcess\n");
     for(int i = 0; i < 5; i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
+    */
     printf("Partial Sum of array = %d\n",arr[4]);
     
 }
@@ -48,10 +50,12 @@ void parentProcess(int arr[5]){
     for(int i = 1; i < 5; i++){
         arr[i] *= arr[i-1];
     }
+    /*
     printf("Array after passing through parentProcess\n");
     for(int i = 0; i < 5; i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
+    */
     printf("Partial Product of array = %d\n",arr[4]);
 }
