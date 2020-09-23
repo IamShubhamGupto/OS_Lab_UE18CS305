@@ -60,17 +60,22 @@ void displaySJF(queue_t* pq, int n){
         return;
     int waiting_time = 0;
     int turnaround_time = 0;
+    int ww_time = 0;
+    int tt_time = 0;
     printf("\nJob\tPriority\t\tBurst Time\t\tWaiting Time\t\tTurnaround Time\n");
     
     while(current != NULL){
         turnaround_time += current->burst_time_;
+        tt_time += turnaround_time;
+        ww_time += waiting_time;
         printf("%d\t\t%d\t\t\t%d\t\t\t%d\t\t\t%d\n",current->job_no_,current->priority_,current->burst_time_,waiting_time,turnaround_time);
         waiting_time += current->burst_time_;
+        
         current = current->next_;
     }
-    printf("%d %d",waiting_time,turnaround_time);
-    printf("\nAverage waiting time = %f\n",(float)waiting_time/n);
-    printf("Average turnaround time = %f\n",(float)turnaround_time/n);
+    //printf("%d %d",waiting_time,turnaround_time);
+    printf("\nAverage waiting time = %f\n",(float)ww_time/n);
+    printf("Average turnaround time = %f\n",(float)tt_time/n);
     printf("----------------------------------\n");
 }
 
@@ -93,7 +98,7 @@ int main(){
     printf("Enter number of jobs: \n");
     scanf("%d",&n);
     for(int i = 1; i <= n; i++){
-        printf("Enter Burst Time of process %d \n",i);
+        printf("\nEnter Burst Time of process %d \n",i);
         scanf("%d",&burst_time);
         printf("Enter Priority of process %d \n",i);
         scanf("%d",&priority);
