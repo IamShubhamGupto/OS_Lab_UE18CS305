@@ -11,19 +11,19 @@ struct list{
 };
 typedef struct list queue_t;
 
-queue_t* initialize_queue();
-node_t* make_node(int, int);
-void insert_node(queue_t*,node_t*);
-void destroy_queue(queue_t*);
-void displaySJF(queue_t*, int);
+static queue_t* initialize_queue();
+static node_t* make_node(int, int);
+static void insert_node(queue_t*,node_t*);
+static void destroy_queue(queue_t*);
+static void displaySJF(queue_t*, int);
 
-queue_t* initialize_queue(){
+static queue_t* initialize_queue(){
     queue_t* pq = (queue_t*)malloc(sizeof(queue_t));
     pq->root_ = NULL;
     return pq;
 }
 
-node_t* make_node(int job_no, int burst_time){
+static node_t* make_node(int job_no, int burst_time){
     node_t* node = (node_t*)malloc(sizeof(node_t));
     node->job_no_ = job_no;
     node->burst_time_ = burst_time;
@@ -31,7 +31,7 @@ node_t* make_node(int job_no, int burst_time){
     return node;
 }
 
-void insert_node(queue_t* pq,node_t* node){
+static void insert_node(queue_t* pq,node_t* node){
     node_t* current = pq->root_;
     node_t* previous = NULL;
     if(current == NULL){
@@ -51,7 +51,7 @@ void insert_node(queue_t* pq,node_t* node){
     previous->next_ = node;
 }
 
-void displaySJF(queue_t* pq, int n){
+static void displaySJF(queue_t* pq, int n){
     node_t* current = pq->root_;
     node_t* previous = NULL;
     if(current == NULL)
@@ -59,25 +59,25 @@ void displaySJF(queue_t* pq, int n){
     int waiting_time = 0;
     int turnaround_time = 0;
     int tt_time = 0;
-    int ww_time = 0;
+    int tw_time = 0;
     printf("\nJob\t\tBurst Time\t\tWaiting Time\t\tTurnaround Time\n");
     
     while(current != NULL){
         turnaround_time += current->burst_time_;
         tt_time += turnaround_time;
-        ww_time += waiting_time;
+        tw_time += waiting_time;
         printf("%d\t\t\t%d\t\t\t%d\t\t\t%d\n",current->job_no_,current->burst_time_,waiting_time,turnaround_time);
         waiting_time += current->burst_time_;
         //ww_time += waiting_time;
         current = current->next_;
     }
     //printf("%d %d",waiting_time,turnaround_time);
-    printf("\nAverage waiting time = %f\n",(float)ww_time/n);
+    printf("\nAverage waiting time = %f\n",(float)tw_time/n);
     printf("Average turnaround time = %f\n",(float)tt_time/n);
     printf("----------------------------------\n");
 }
 
-void destroy_queue(queue_t* pq){
+static void destroy_queue(queue_t* pq){
     if(pq->root_ == NULL)
         return;
     node_t* current = pq->root_;
