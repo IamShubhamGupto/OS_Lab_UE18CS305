@@ -38,14 +38,36 @@ static void insert_node(queue_t* pq,node_t* node){
         pq->root_ = node;
         return;
     }
+    
     if(current != NULL && current->burst_time_ > node->burst_time_){
         node->next_ = current;
         pq->root_ = node;
         return;
     }
+    if(current != NULL && current->burst_time_ == node->burst_time_){
+        if(current->job_no_ > node->job_no_){
+            node->next_ = current;
+            previous->next_ = node;
+        }else{
+            node->next_ = current->next_;
+            current->next_ = node;
+        }
+        return;
+    }
     while(current != NULL && current->burst_time_ < node->burst_time_){
         previous = current;
         current = current->next_;
+    }
+    if(current != NULL && current->burst_time_ == node->burst_time_){
+        //Both jobs have same burst time, sort according to job no in ascending
+        if(current->job_no_ > node->job_no_){
+            node->next_ = current;
+            previous->next_ = node;
+        }else{
+            node->next_ = current->next_;
+            current->next_ = node;
+        }
+        return;
     }
     node->next_ = current;
     previous->next_ = node;
