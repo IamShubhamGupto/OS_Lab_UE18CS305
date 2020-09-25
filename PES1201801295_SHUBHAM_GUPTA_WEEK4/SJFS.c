@@ -47,7 +47,7 @@ static void insert_node(queue_t* pq,node_t* node){
     if(current != NULL && current->burst_time_ == node->burst_time_){
         if(current->job_no_ > node->job_no_){
             node->next_ = current;
-            previous->next_ = node;
+            pq->root_ = node;
         }else{
             node->next_ = current->next_;
             current->next_ = node;

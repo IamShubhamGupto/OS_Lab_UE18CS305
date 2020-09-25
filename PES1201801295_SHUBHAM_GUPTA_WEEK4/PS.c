@@ -49,12 +49,12 @@ static void insert_node(queue_t* pq,node_t* node){
         //same priority so sort according to burst time
         if(current->burst_time_ > node->burst_time_){
             node->next_ = current;
-            previous->next_ = node;
+            pq->root_= node;
         }else if (current->burst_time_ == node->burst_time_){
              // same burst time so sort according to job no
             if(current->job_no_ > node->job_no_){
                 node->next_ = current;
-                previous->next_ = node;
+                pq->root_ = node;
             }else{
                 node->next_ = current->next_;
                 current->next_ = node;
