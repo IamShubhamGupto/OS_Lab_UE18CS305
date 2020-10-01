@@ -10,3 +10,13 @@ Assignment files used for OS Lab UE18CS305
 ## Week3
 * Processes
 * fork() and execv() functions
+
+## Week4
+* Implement Shortest Job First Scheduling Algorithm
+* Implement Priorityy Scheduling Algorithm
+
+## Week5
+* Implement Round Robin Scheduling Algorithm
+
+## ToDo
+* Week6 
