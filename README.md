@@ -18,5 +18,9 @@ Assignment files used for OS Lab UE18CS305
 ## Week5
 * Implement Round Robin Scheduling Algorithm
 
+## Week 6
+* Implement Producer Consumer problem to show race condition
+* Implement Producer Consumer problem with semaphores
+
 ## ToDo
-* Week6 
+* ~Week6~ 
