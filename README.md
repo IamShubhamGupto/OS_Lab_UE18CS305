@@ -20,7 +20,15 @@ Assignment files used for OS Lab UE18CS305
 
 ## Week 6
 * Implement Producer Consumer problem to show race condition
-* Implement Producer Consumer problem with semaphores
+
+## Week 7
+* Implement Producer Consumer problem using wait and signal
+
+## Week 8
+* Implement Producer Consumer problem using inbuilt semaphores
+
+## Week 9
+* Implement Producer Consumer problem using pipes
 
 ## ToDo
 * ~Week6~ 
