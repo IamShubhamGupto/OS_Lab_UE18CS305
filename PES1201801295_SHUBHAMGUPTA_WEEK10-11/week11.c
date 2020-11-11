@@ -67,6 +67,7 @@ int main(){
             printf("PF No. -- %d\n",pf);
         }
     }
+    printf("The number of page faults using LRU is %d\n",pf);
     free(reference_strings);
     free(last_visited);
     free(frame_array);
