@@ -30,5 +30,11 @@ Assignment files used for OS Lab UE18CS305
 ## Week 9
 * Implement Producer Consumer problem using pipes
 
+## Week 10
+* Implement Best Fit Algorithm
+
+## Week 11
+* Implement LRU Algorithm
+
 ## ToDo
 * ~Week6~ 
