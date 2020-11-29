@@ -36,5 +36,11 @@ Assignment files used for OS Lab UE18CS305
 ## Week 11
 * Implement LRU Algorithm
 
+## Week 12
+* Implement Dining Philospher solution using semaphores
+
+## Week 13
+* Implement FIFO file scheduling system
+
 ## ToDo
 * ~Week6~ 
