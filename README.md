@@ -1,5 +1,5 @@
 # OS_Lab_UE18CS305
-Assignment files used for OS Lab UE18CS305
+Assignment files used for OS Lab UE18CS305 at PES University. 
 
 ## Week1
 * Make utility and makefile
@@ -13,7 +13,7 @@ Assignment files used for OS Lab UE18CS305
 
 ## Week4
 * Implement Shortest Job First Scheduling Algorithm
-* Implement Priorityy Scheduling Algorithm
+* Implement Priority Scheduling Algorithm
 
 ## Week5
 * Implement Round Robin Scheduling Algorithm
